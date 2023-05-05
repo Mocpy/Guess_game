@@ -9,12 +9,13 @@ def vyber_slova():
 
 def uhodnuti():
     a = 0
-    vybrane_slovo = vyber_slova()
     while True:
+        vybrane_slovo = vyber_slova()
         odpoved = input("Doplň: " + vybrane_slovo[:-2])
         if odpoved == vybrane_slovo[-2:]:
             print("Správně!")
             a += 1
+        else:
             return str(a)
 
 def nejlepsi_skore():
