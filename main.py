@@ -24,6 +24,9 @@ def nejlepsi_skore():
         precteno = fd.readline()
     print('Tve nejlepší skore je: ', precteno)
     print('Teď jsi získal: ', z_uhodnuti)
+    if int(precteno) == "":
+        with open('nejlepsi_skore.txt', 'w') as fd:
+            fd.write('0')
     if int(precteno) < z_uhodnuti:
         with open('nejlepsi_skore.txt', 'w') as fd:
             fd.write(str(z_uhodnuti))
