@@ -16,10 +16,17 @@ def uhodnuti():
             print("Správně!")
             a += 1
         else:
-            return str(a)
+            return a
 
 def nejlepsi_skore():
-    with open('nejlepsi_skore.txt', 'w') as fd:
-        fd.write(uhodnuti())
+    z_uhodnuti = uhodnuti()
+    with open('nejlepsi_skore.txt', 'r') as fd:
+        precteno = fd.readline()
+    print(precteno)
+    print(z_uhodnuti)
+    if int(precteno) < z_uhodnuti:
+        with open('nejlepsi_skore.txt', 'w') as fd:
+            fd.write(str(z_uhodnuti))
+
 
 nejlepsi_skore()
